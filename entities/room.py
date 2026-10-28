@@ -2,7 +2,7 @@
 
 from dataclasses import dataclass, field
 
-from enemy import Enemy
+from entities.enemy import Enemy
 
 
 @dataclass

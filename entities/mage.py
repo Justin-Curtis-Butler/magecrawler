@@ -4,7 +4,7 @@
 
 from dataclasses import dataclass, field
 
-from spell import Spell
+from entities.spell import Spell
 
 
 @dataclass
