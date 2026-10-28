@@ -26,26 +26,33 @@ def main() -> None:
             return
         elif verb == "look":
             show_room(room)
+            print("\nCommands: go <direction>, look, stats, quit")
         elif verb == "stats":
             print(f"HP {mage.hp}/{mage.max_hp}\nMana {mage.mana}/{mage.max_mana}\nPotions {mage.potions}")
+            print("\nCommands: go <direction>, look, stats, quit")
         elif verb == "go" and len(command) > 1:
             direction = command[1]
             if direction not in room.exits:
                 print("You can't go that way.")
+                print("\nCommands: go <direction>, look, stats, quit")
                 continue
             current = room.exits[direction]
             room = dungeon[current]
             show_room(room)
+
 
             if room.loot == "potion":
                 mage.potions += 1
                 room.loot = None
                 print("You pick up a healing potion!")
 
+
             if room.enemy and room.enemy.alive:
                 combat(mage, room.enemy)
+            print("\nCommands: go <direction>, look, stats, quit")
         else:
             print("Unknown command.")
+            print("\nCommands: go <direction>, look, stats, quit")
 
     print("\nYou have been overcome... the dungeon claims your loot.\n\nGAME OVER.")
 

@@ -54,4 +54,4 @@ def combat(mage: Mage, enemy: Enemy) -> None:
             print(f"The {enemy.name} hits you for {dmg} damage.")
 
     if mage.alive:
-        print(f"\nThe {enemy.name} is defeared!")
+        print(f"\nThe {enemy.name} is defeated!")
