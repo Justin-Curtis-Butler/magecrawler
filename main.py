@@ -2,6 +2,7 @@
 
 # Contains the main game loop
 
+from functions.combat import combat
 from functions.showroom import show_room
 from functions.worldbuilder import build_dungeon, creat_mage
 
@@ -42,8 +43,7 @@ def main() -> None:
                 print("You pick up a healing potion!")
 
             if room.enemy and room.enemy.alive:
-                print(f"{room.enemy.name} attacks you!")
-                #combat
+                combat(mage, room.enemy)
         else:
             print("Unknown command.")
 
